@@ -35,4 +35,11 @@ public class GameTest {
 
         assertEquals(game.getWordToGuess(word), word);
     }
+
+    // Testing that the class can hold the remaining number of attempts after adding a class attribute
+    @Test public void testGetsInitialRemainingAttempts() {
+        Game game = new Game("Makers");
+        
+        assertEquals(game.attempts, Integer.valueOf(10));
+    }
 }

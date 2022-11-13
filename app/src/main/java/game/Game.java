@@ -1,13 +1,12 @@
 package game;
 
-import java.util.Random;
-
 public class Game {
 
     String word;
 
      public Game() {
-        word = getRandomWordFromDictionary();
+        WordChooser wChooser = new WordChooser();
+        word = wChooser.getRandomWordFromDictionary();
      }
 
      Integer attempts = 10;
@@ -34,9 +33,10 @@ public class Game {
         return sBuilder.toString(); /* Need to convert to a string to avoid a type mismatch error with StringBuilder type */
     }
 
-    public String getRandomWordFromDictionary() {
-        Random rnd = new Random();
-         return DICTIONARY[(rnd.nextInt(3))]; // should the upper limit be 4 (exclusive?) - need to use square brackets to access an element in an array by its index (using parentheses will result in an undefined method error "The method DICTIONARY(int) is undefined for the type Game")
+    // getRandomWordFromDictionary method removed from game class and added to a separate Word Chooser class instead
+    // public String getRandomWordFromDictionary() {
+    //     Random rnd = new Random();
+    //      return DICTIONARY[(rnd.nextInt(3))]; // should the upper limit be 4 (exclusive?) - need to use square brackets to access an element in an array by its index (using parentheses will result in an undefined method error "The method DICTIONARY(int) is undefined for the type Game")
 
-    }
+    // }
 }
